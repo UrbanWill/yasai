@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import {
   StyleSheet,
   View,
@@ -9,6 +10,10 @@ import {
   Keyboard,
   Dimensions,
 } from "react-native";
+
+const propTypes = {
+  setIsAuthenticated: PropTypes.func,
+};
 
 const LoginComponent = ({ setIsAuthenticated }) => {
   return (
@@ -29,10 +34,9 @@ const LoginComponent = ({ setIsAuthenticated }) => {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // justifyContent: "center",
+    flex: 1,
+    justifyContent: "center",
     alignItems: "center",
-    marginTop: Dimensions.get("window").height * 0.4,
   },
   inputContainer: {
     borderWidth: 2,
@@ -42,4 +46,5 @@ const styles = StyleSheet.create({
   },
 });
 
+LoginComponent.propTypes = propTypes;
 export default LoginComponent;

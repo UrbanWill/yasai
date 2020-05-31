@@ -18,14 +18,10 @@ const Launch = () => {
     return <Splash />;
   }
 
-  return (
-    <View>
-      {isAuthenticated ? (
-        <Text>MY APP</Text>
-      ) : (
-        <LoginComponent setIsAuthenticated={setIsAuthenticated} />
-      )}
-    </View>
+  return isAuthenticated ? (
+    <Text>MY APP</Text>
+  ) : (
+    <LoginComponent setIsAuthenticated={setIsAuthenticated} />
   );
 };
 export default Launch;
